@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/components/Information.css'
 
 export const Information = () => {
@@ -25,7 +26,9 @@ export const Information = () => {
               Regresar
             </div>
             <div className="Information-next">
-              Pagar
+              <Link to='/checkout/payment'>
+                Pagar
+              </Link>
             </div>
           </div>
         </div>
