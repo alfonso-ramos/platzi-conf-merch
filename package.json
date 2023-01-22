@@ -7,19 +7,18 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "linter": "eslint src/ --fix"
+    "linter": "eslint src/ --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^8.31.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.4",
     "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.0",
-    "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -28,7 +27,10 @@
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
+    "prettier": "^2.8.3",
     "react-router-dom": "^6.6.2",
     "vite": "^4.0.0"
   },
