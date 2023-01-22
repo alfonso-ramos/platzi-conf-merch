@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useMemo } from 'react';
 import { AppContext } from '../context/AppContext';
 
 import { Link } from 'react-router-dom';
@@ -10,6 +10,9 @@ export const Header = () => {
     state: { cart }
   } = useContext(AppContext);
 
+  const quantityOfProducts = useMemo(() => {
+    return cart.length
+  }, [cart])
   return (
     <div className="Header">
       <Link to="/">
@@ -19,7 +22,7 @@ export const Header = () => {
         <Link to="/checkout">
           <i className="fas fa-shopping-basket" />
         </Link>
-        {cart.length > 0 && <div className="Header-alert">{cart.length}</div>}
+        {quantityOfProducts > 0 && <div className="Header-alert">{quantityOfProducts}</div>}
       </div>
     </div>
   );
