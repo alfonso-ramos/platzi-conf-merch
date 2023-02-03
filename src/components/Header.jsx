@@ -13,6 +13,7 @@ export const Header = () => {
   const quantityOfProducts = useMemo(() => {
     return cart.length
   }, [cart])
+  
   return (
     <div className="Header">
       <Link to="/">

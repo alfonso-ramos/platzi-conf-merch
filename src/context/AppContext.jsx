@@ -7,6 +7,8 @@ export const AppProvider = ({ children }) => {
   const initialState = useInitialState();
 
   return (
-    <AppContext.Provider value={initialState}>{children}</AppContext.Provider>
+    <AppContext.Provider value={initialState}>
+      {children}
+    </AppContext.Provider>
   );
 };
