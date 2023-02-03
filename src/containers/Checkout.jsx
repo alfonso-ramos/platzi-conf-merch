@@ -1,15 +1,12 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
+import { CheckoutItem } from '../components/CheckoutItem';
 import { Link } from 'react-router-dom';
 
 import '../styles/components/Checkout.css';
 
 export const Checkout = () => {
-  const { state: { cart },addToCart, removeFromCart } = useContext(AppContext)
-
-  // const handleAddToCart = product = () => {
-  //   addToCart(product)
-  // }
+  const { state:{ cart }, removeFromCart } = useContext(AppContext)
 
   const handleRemove = product => {
     removeFromCart(product)
@@ -24,17 +21,13 @@ export const Checkout = () => {
   return (
     <div className="Checkout">
       <div className="Checkout-content">
-        {cart.lenght > 0 ? <h3>Lista de pedidos: </h3> : <h3>Sin pedidos en la cesta:</h3> }
-        {cart.map(item => (
-          <div className="Checkout-item">
-            <div className="Checkout-element">
-              <h4>{item.title}</h4>
-              <span>${item.price}</span>
-            </div>
-            <button type="button" onClick={handleRemove(item)}>
-              <i className="fas fa-trash-alt" />
-            </button>
-          </div>
+        {cart.lenght > 0 ? <h3>Lista de pedidos: </h3> : <h3>Sin pedidos en la cesta:</h3>}
+        {cart.map((item) => (
+          <CheckoutItem
+            key={Math.random()}
+            product={item}
+            handleRemove={() => handleRemove(item)}
+          />
         ))}
       </div>
       {cart.lenght > 0 && (
