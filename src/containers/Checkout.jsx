@@ -2,7 +2,6 @@ import { useContext, useEffect } from 'react';
 import { AppContext } from '../context/AppContext';
 import { CheckoutItem } from '../components/CheckoutItem';
 import { Link } from 'react-router-dom';
-
 import '../styles/components/Checkout.css';
 
 export const Checkout = () => {
