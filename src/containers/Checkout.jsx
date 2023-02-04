@@ -20,7 +20,7 @@ export const Checkout = () => {
   return (
     <div className="Checkout">
       <div className="Checkout-content">
-        {cart.lenght > 0 ? <h3>Lista de pedidos: </h3> : <h3>Sin pedidos en la cesta:</h3>}
+        {cart.length > 0 ? <h3>Lista de pedidos: </h3> : <h3>Sin pedidos en la cesta:</h3>}
         {cart.map((item) => (
           <CheckoutItem
             key={Math.random()}
@@ -29,7 +29,7 @@ export const Checkout = () => {
           />
         ))}
       </div>
-      {cart.lenght > 0 && (
+      {cart.length > 0 && (
         <div className="Checkout-sidebar">
           <h3>{`Precio Total: $ ${handleSumTotal()}`}</h3>
           <Link to="/checkout/information">
